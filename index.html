@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BOC de Cantabria · Contacto y soporte de la aplicación</title>
+<meta name="description" content="Información de contacto y soporte de BOC de Cantabria, aplicación no oficial para consultar el Boletín Oficial de Cantabria. Correo, teléfono y responsable.">
+<meta name="robots" content="index, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy-950:   #032F45;
+    --navy-900:   #073E59;
+    --navy-800:   #0A4D6D;
+    --cyan-600:   #079AB8;
+    --cyan-500:   #10ADCB;
+    --cyan-100:   #DDF3F8;
+    --cyan-050:   #EFFAFC;
+    --purple:     #7352B6;
+    --paper:      #F4F7F9;
+    --surface:    #FFFFFF;
+    --ink:        #123044;
+    --ink-soft:   #5D7280;
+    --rule:       #D7E2E8;
+    --shadow:     0 18px 50px rgba(3, 47, 69, 0.10);
+    --shadow-soft:0 8px 24px rgba(3, 47, 69, 0.08);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Public Sans", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.68;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { width: min(calc(100% - 2rem), 70rem); margin: 0 auto; }
+
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible {
+    outline: 3px solid var(--cyan-500);
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+
+  /* ── Cabecera ───────────────────────────────── */
+  .masthead {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background:
+      radial-gradient(circle at 82% 18%, rgba(16, 173, 203, 0.22), transparent 27rem),
+      linear-gradient(135deg, var(--navy-950) 0%, var(--navy-800) 100%);
+    padding: 2.25rem 0 6.5rem;
+  }
+  .masthead::before,
+  .masthead::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(105, 222, 240, 0.35);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .masthead::before { width: 34rem; height: 34rem; right: -20rem; top: -22rem; }
+  .masthead::after { width: 23rem; height: 23rem; left: -15rem; bottom: -16rem; }
+  .masthead .wrap { position: relative; z-index: 1; }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-bottom: 3.5rem;
+  }
+  .app-mark {
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #19BCD8, #0789A7);
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  }
+  .brand-copy { display: grid; line-height: 1.25; }
+  .brand-copy strong { font-size: 1rem; }
+  .brand-copy span { color: #B8DEE9; font-size: 0.78rem; }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+    padding: 0.42rem 0.75rem;
+    border: 1px solid rgba(164, 229, 240, 0.34);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #C8EDF4;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .masthead h1 {
+    max-width: 13ch;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 7vw, 4.8rem);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    margin: 0;
+  }
+  .masthead p {
+    margin: 1.25rem 0 0;
+    color: #C6E4EC;
+    max-width: 56ch;
+    font-size: clamp(1rem, 2.2vw, 1.18rem);
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.8rem; }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    padding: 0.75rem 1.15rem;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+  }
+  .button:hover { transform: translateY(-2px); }
+  .button-primary { background: var(--cyan-500); color: var(--navy-950); box-shadow: 0 12px 28px rgba(3, 24, 34, 0.25); }
+  .button-secondary { background: rgba(255,255,255,0.09); border: 1px solid rgba(255,255,255,0.24); color: #fff; }
+
+  .rules { display: none; }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 2rem;
+    padding: 0;
+  }
+  nav a {
+    padding: 0.5rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #D5EDF3;
+    font-size: 0.84rem;
+    font-weight: 600;
+  }
+  nav a:hover { background: rgba(255,255,255,0.16); color: #fff; }
+
+  /* ── Contacto ───────────────────────────────── */
+  main > .wrap { margin-top: -3.8rem; position: relative; z-index: 2; }
+  .contact {
+    padding: clamp(1.4rem, 4vw, 2.4rem);
+    background: var(--surface);
+    border: 1px solid rgba(215, 226, 232, 0.78);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+  }
+  .contact > h2 {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--cyan-600);
+    margin: 0 0 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .mail {
+    display: inline-block;
+    font-size: clamp(1.35rem, 5vw, 2.45rem);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    color: var(--navy-900);
+    word-break: break-word;
+  }
+  .mail:hover { color: var(--cyan-600); }
+
+  dl {
+    margin: 2rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+  .row {
+    min-width: 0;
+    padding: 1rem 1.05rem;
+    background: var(--cyan-050);
+    border: 1px solid #D9EDF2;
+    border-radius: 14px;
+  }
+  .row dt { color: var(--ink-soft); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+  .row dd { margin: 0; }
+  .row dd a { color: var(--navy-800); font-weight: 700; }
+  .row dd a:hover { color: var(--cyan-600); }
+
+  /* ── Secciones ──────────────────────────────── */
+  section.block {
+    margin-top: 1rem;
+    padding: clamp(1.4rem, 4vw, 2.25rem);
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+  }
+  section.block h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin: 0 0 0.85rem;
+    letter-spacing: -0.025em;
+    color: var(--navy-900);
+  }
+  section.block p { margin: 0 0 1rem; max-width: 64ch; }
+  section.block p:last-child { margin-bottom: 0; }
+  section.block a.inline { color: var(--navy-800); font-weight: 700; border-bottom: 2px solid var(--cyan-500); }
+  section.block a.inline:hover { color: var(--cyan-600); }
+
+  .notice {
+    position: relative;
+    border: 1px solid #CBE8EF;
+    border-left: 5px solid var(--cyan-500);
+    border-radius: 0 14px 14px 0;
+    background: var(--cyan-050);
+    padding: 1rem 1.15rem;
+    margin: 1.5rem 0 0;
+  }
+  .notice p { margin: 0; font-size: 0.97rem; }
+
+  /* ── Pie ────────────────────────────────────── */
+  footer {
+    margin-top: 3rem;
+    padding: 2.5rem 0 3.2rem;
+    background: var(--navy-950);
+    font-size: 0.9rem;
+    color: #B8D5DE;
+  }
+  footer p { margin: 0 0 0.35rem; }
+  footer a { color: #DDF5FA; border-bottom: 1px solid rgba(221,245,250,0.35); }
+  footer a:hover { color: #fff; border-bottom-color: var(--cyan-500); }
+
+  @media (max-width: 42rem) {
+    .masthead { padding-top: 1.4rem; padding-bottom: 5.5rem; }
+    .brand { margin-bottom: 2.4rem; }
+    .masthead h1 { font-size: clamp(2.35rem, 13vw, 3.8rem); }
+    .hero-actions { display: grid; }
+    .button { width: 100%; }
+    dl { grid-template-columns: 1fr; }
+    main > .wrap { margin-top: -3rem; }
+  }
+</style>
+</head>
+
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">
+      <div class="app-mark" aria-hidden="true">BOC</div>
+      <div class="brand-copy">
+        <strong>BOC Cantabria</strong>
+        <span>Aplicación independiente y no oficial</span>
+      </div>
+    </div>
+
+    <span class="eyebrow">Contacto y soporte</span>
+    <h1>Tu boletín, más fácil e inteligente</h1>
+    <p>Consulta el Boletín Oficial de Cantabria desde el móvil, recibe avisos y accede rápidamente a cada publicación oficial.</p>
+
+    <div class="hero-actions">
+      <a class="button button-primary" href="https://play.google.com/store/apps/details?id=com.jrblanco.boccantabria">Disponible en Google Play</a>
+      <a class="button button-secondary" href="mailto:jr.cosio1@gmail.com">Contactar con soporte</a>
+    </div>
+
+    <nav aria-label="Navegación principal">
+      <a href="#contacto">Contacto</a>
+      <a href="#aplicacion">La aplicación</a>
+      <a href="#contenidos">Origen de los contenidos</a>
+      <a href="#privacidad">Privacidad</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="contact" id="contacto">
+      <h2>Contacto y soporte</h2>
+
+      <a class="mail" href="mailto:jr.cosio1@gmail.com">jr.cosio1@gmail.com</a>
+
+      <dl>
+        <div class="row">
+          <dt>Teléfono</dt>
+          <dd><a href="tel:+34677891779">+34 677 89 17 79</a></dd>
+        </div>
+        <div class="row">
+          <dt>Responsable</dt>
+          <dd>José Ramón Blanco Gutiérrez, desarrollador de la aplicación</dd>
+        </div>
+        <div class="row">
+          <dt>Dirección</dt>
+          <dd>Paseo de Altamira 264, bajo · Cantabria, España</dd>
+        </div>
+        <div class="row">
+          <dt>Respuesta</dt>
+          <dd>Se responde a los mensajes en un plazo máximo de 48 horas laborables.</dd>
+        </div>
+        <div class="row">
+          <dt>Aplicación</dt>
+          <dd><a href="https://play.google.com/store/apps/details?id=com.jrblanco.boccantabria">BOC de Cantabria en Google Play</a></dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="block" id="aplicacion">
+      <h2>La aplicación</h2>
+      <p>BOC de Cantabria permite consultar desde el móvil las publicaciones del Boletín Oficial de Cantabria: anuncios, convocatorias, disposiciones y resoluciones, según se van publicando en el boletín.</p>
+      <p>Es una iniciativa personal y gratuita, pensada como una pequeña aportación para que cualquier persona de Cantabria pueda seguir el boletín con comodidad. El desarrollo, el mantenimiento y la atención a los usuarios corren a cargo de José Ramón Blanco Gutiérrez, que atiende cualquier consulta a través de los datos de contacto de esta página.</p>
+      <div class="notice">
+        <p>Esta aplicación no es oficial y no tiene ninguna relación ni vínculo con el Gobierno de Cantabria ni con el organismo editor del boletín.</p>
+      </div>
+    </section>
+
+    <section class="block" id="contenidos">
+      <h2>Origen de los contenidos</h2>
+      <p>La aplicación no elabora contenido propio. Se limita a mostrar la información que el Gobierno de Cantabria publica en el servicio RSS del Boletín Oficial de Cantabria, disponible en <a class="inline" href="https://boc.cantabria.es">boc.cantabria.es</a>, con enlace a la publicación original en cada caso.</p>
+      <p>El responsable de la aplicación no lo es del servicio de publicación del boletín ni de su disponibilidad o exactitud, y no puede garantizar la continuidad del servicio ajeno del que depende.</p>
+      <p>Si detectas un error, una publicación que no se muestra correctamente o quieres solicitar una corrección, escribe a <a class="inline" href="mailto:jr.cosio1@gmail.com">jr.cosio1@gmail.com</a> indicando la fecha y el enlace afectado.</p>
+    </section>
+
+    <section class="block" id="privacidad">
+      <h2>Privacidad</h2>
+      <p>La aplicación no recopila datos personales ni los comparte con terceros. Puedes consultar el detalle en la <a class="inline" href="https://sites.google.com/view/privacidadboc/inicio">política de privacidad</a>. Para cualquier duda sobre el tratamiento de datos, escribe a la dirección de contacto de esta página.</p>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>José Ramón Blanco Gutiérrez · Paseo de Altamira 264, bajo · Cantabria, España</p>
+    <p><a href="mailto:jr.cosio1@gmail.com">jr.cosio1@gmail.com</a> · <a href="tel:+34677891779">+34 677 89 17 79</a></p>
+    <p>© 2026 José Ramón Blanco Gutiérrez. Aplicación no oficial, sin vinculación con el Gobierno de Cantabria.</p>
+  </div>
+</footer>
+
+</body>
+</html>
